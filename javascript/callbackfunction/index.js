@@ -26,5 +26,5 @@ function ssum (a,b, callback){                // higher order function ssum
     let value2 = callback(b);
      return value1 + value2;
  }
-let result = ssum(2,3, cube); // higher order function ssum and callback function = cube
+let result = ssum(2,3, cube); // higher order function = ssum and callback function = cube
 console.log(result);
