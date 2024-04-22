@@ -15,4 +15,4 @@ const user = {
 const data = JSON.stringify(user); // it converts your json data into string
 
 const data2 = JSON.parse(data); // it converts your string into json data
-console.log(data2);
+console.log(data);
