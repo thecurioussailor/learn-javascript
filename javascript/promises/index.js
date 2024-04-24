@@ -75,29 +75,68 @@
     
 //     square(3).then(multiplyBy2).then(onDone);
 
-function square(a){
-    return new Promise((resolve) => {
-        resolve(a * a);
-    });
-}
+// biriyani
+// veg and non-veg
+//step 1 - wash rice then boil it till 60% cooked - 20 mins ---paneer
+//step 2 - non-veg biriyani if not 
+ //                               -- paneer pulao
 
-function multiplyBy2(a){
-    return new Promise((resolve) => {
-        resolve(2 * a);
-    });
-}
+//  promise = 1. chicken mile gaya
+//            2. nahi mila 
+//            3. pending state
 
-function ssum(a, b){
-    return Promise.all([multiplyBy2(a), multiplyBy2(b)])
-        .then(([valueA, valueB]) => {
-            return valueA + valueB;
-        });
-}
+// promise 1. fullfilled, pending, reject
+ 
+//Callback way
+// function greet(callback){
+//     setTimeout(() =>{
+//         callback("Okay")
+//     },5000);
+// }
 
-// Example usage:
-ssum(2, 3).then();
+// function onDone(data){
+//     console.log(data);
+// }
 
-    
+// greet(onDone);
  
 
+let promise = new Promise(function (resolve, reject) {
+
     
+    setTimeout(()=>{
+       resolve("okay");
+    // reject("Please try again");
+    }, 5000)
+    
+})
+
+function onDone(data){
+    console.log(data);
+}
+
+setTimeout(() => {
+    console.log("I am not promise!")
+},4000)
+console.log(promise);
+setTimeout(() => {
+    console.log("I am not promise part 2!")
+},5000)
+console.log(promise);
+
+promise.then(onDone).catch((err)=>{
+    console.log(err)
+});
+
+
+console.log(promise);
+
+
+
+
+
+
+
+
+
+
